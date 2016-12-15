@@ -7,8 +7,11 @@ angular
 	.controller('DashboardCtrl', ['$scope', 'firebaseService', DashboardCtrl]);
 
 function DashboardCtrl($scope, firebaseService) {
+	$scope.currentDate = moment().toLocaleString()
 	dateKey = moment().format('YYYY-MM-DD')
+	$scope.isLoaded = false;
 	firebaseService.getUsers(function(users){
+		$scope.isLoaded = true;
 		$scope.employees = [];
 		users.forEach(function(user){
 			userCalendar = user.val().calendar;

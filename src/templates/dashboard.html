@@ -2,9 +2,13 @@
 	<div class="col-lg-12">
 		<rd-widget>
 			<rd-widget-header icon="fa-users" title="Employees Status">
+				<div class="message">
+					<span>{{currentDate}}</span>
+				</div>
 			</rd-widget-header>
 			<rd-widget-body classes="medium no-padding">
-				<div class="table-responsive">
+				<rd-loading ng-if="!isLoaded"></rd-loading>
+				<div class="table-responsive" ng-if="isLoaded">
 					<table class="table">
 						<thead>
 							<tr>

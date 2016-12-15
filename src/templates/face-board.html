@@ -1,1 +1,24 @@
-face-board.html
+<div class="row" ng-controller="DashboardCtrl">
+	<div class="col-lg-12">
+		<rd-widget>
+			<rd-widget-header icon="fa-users" title="Face Board">
+			</rd-widget-header>
+			<rd-widget-body>
+				<rd-loading ng-if="!isLoaded"></rd-loading>
+				<div class="faceboard-wrapper" style="
+					display: flex;
+				">
+					<a ui-sref="profile({id: employee.id})" ng-repeat="employee in employees" style="
+						display: flex;
+						flex-flow: column;
+						margin-right: 20px;
+					">
+
+						<img gravatar-src="employee.email" ui-sref="profile({id: employee.id})"></img>
+						<span>{{employee.name}}</span>
+					</a>
+				</div>
+			</rd-widget-body>
+		<rd-widget>
+	</div>
+</div>

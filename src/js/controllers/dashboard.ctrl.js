@@ -20,7 +20,8 @@ function DashboardCtrl($scope) {
 			$scope.employees.push({
 				name: userDetails.name,
 				id: userDetails.id,
-				status: userCalendar[dateKey].status
+				status: userCalendar[dateKey].status,
+				email: userDetails.email.toLowerCase()
 			});
 			$scope.$apply();
 		});

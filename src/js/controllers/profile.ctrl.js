@@ -14,6 +14,7 @@ function ProfileCtrl($scope, $stateParams) {
 	userListener.orderByKey().equalTo(userId).on('value', function(user){
 		$scope.isLoaded = true;
 		userDetails = user.val()[userId];
+		userDetails.details.email = userDetails.details.email.toLowerCase()
 		$scope.employee = _.extend(userDetails.details,
 			{calendar: userDetails.calendar});
 		$scope.$apply();

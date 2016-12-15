@@ -4,13 +4,14 @@
 
 angular
 	.module('RDash')
-	.controller('DashboardCtrl', ['$scope', 'firebaseService', DashboardCtrl]);
+	.controller('DashboardCtrl', ['$scope', DashboardCtrl]);
 
-function DashboardCtrl($scope, firebaseService) {
+function DashboardCtrl($scope) {
+	userListener = firebase.database().ref('users');
 	$scope.currentDate = moment().toLocaleString()
 	dateKey = moment().format('YYYY-MM-DD')
 	$scope.isLoaded = false;
-	firebaseService.getUsers(function(users){
+	userListener.on('value', function(users){
 		$scope.isLoaded = true;
 		$scope.employees = [];
 		users.forEach(function(user){
@@ -23,7 +24,10 @@ function DashboardCtrl($scope, firebaseService) {
 			});
 			$scope.$apply();
 		});
-		console.log($scope.employees);
 	});
+
+	$scope.$on('$destroy', function(){
+		userListener.off();
+	})
 
 }

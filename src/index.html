@@ -20,6 +20,18 @@
   <!-- endbuild -->
   <!-- Custom Scripts -->
   <script type="text/javascript" src="js/dashboard.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyD9OWvkxqR0c5-9mFMN3qOeJ-AzxQTAEfM",
+	    authDomain: "whereaboutsbot.firebaseapp.com",
+	    databaseURL: "https://whereaboutsbot.firebaseio.com",
+	    storageBucket: "whereaboutsbot.appspot.com",
+	    messagingSenderId: "903833953591"
+	  };
+	  firebase.initializeApp(config);
+	</script>
 </head>
 <body ng-controller="MasterCtrl">
   <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>

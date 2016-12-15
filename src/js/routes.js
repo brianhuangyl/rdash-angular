@@ -15,6 +15,14 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/',
                 templateUrl: 'templates/dashboard.html'
             })
+            .state('faceBoard', {
+                url: '/face-board',
+                templateUrl: 'templates/face-board.html'
+            })
+            .state('faceBoard.profile', {
+                url: '/face-board/{:id}',
+                templateUrl: 'templates/profile.html'
+            })
             .state('tables', {
                 url: '/tables',
                 templateUrl: 'templates/tables.html'

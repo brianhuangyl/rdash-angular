@@ -17,9 +17,11 @@
 								<th>Status</th>
 							</tr>
 						</thead>
-						<tbody ng-repeat="employee in employees track by $index">
-							<tr>
-								<td class="text-center">{{employee.id}}</td>
+						<tbody>
+							<tr ng-repeat="employee in employees track by $index">
+								<td class="text-center">
+									<a ui-sref="profile({id: employee.id})">{{employee.id}}</a>
+								</td>
 								<td>{{employee.name}}</td>
 								<td>{{employee.status}}</td>
 							</tr>

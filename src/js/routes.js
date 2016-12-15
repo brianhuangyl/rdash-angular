@@ -15,12 +15,12 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/',
                 templateUrl: 'templates/dashboard.html'
             })
-            .state('faceBoard', {
+            .state('faceboard', {
                 url: '/face-board',
                 templateUrl: 'templates/face-board.html'
             })
-            .state('faceBoard.profile', {
-                url: '/face-board/{:id}',
+            .state('profile', {
+                url: '/profile/:id',
                 templateUrl: 'templates/profile.html'
             })
             .state('tables', {
